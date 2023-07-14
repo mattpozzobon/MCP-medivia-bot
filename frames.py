@@ -179,5 +179,5 @@ def forth_frame(frame):
     text.grid(row=8, column=0, columnspan=3, sticky='nsew', pady=5)  # Changed pack to grid
 
 
-    ## sys.stdout = TextRedirector(text)
-    ##sys.stderr = TextRedirector(text)
+    #sys.stdout = TextRedirector(text)
+    #sys.stderr = TextRedirector(text)

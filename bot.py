@@ -18,8 +18,7 @@ class Bot:
     def get_status(self):
         while self.running:
             start_time = time.time()
-            self.mana = get_mana(self.data)
-            self.health = get_health(self.data)
+            self.health, self.mana = get_status_position()
             end_time = time.time()
             self.get_status_running_time = end_time - start_time
             time.sleep(0.1)
@@ -44,13 +43,13 @@ class Bot:
             start_time = time.time()
             self.eating_time = eat(self.eating_time, self.data)
             end_time = time.time()
-            time.sleep(0.1)
 
             display(current_mana=self.mana,
                     current_health=self.health,
                     time=end_time - start_time,
                     cast_time=self.cast_running_time,
                     status_time=self.get_status_running_time)
+            time.sleep(0.1)
 
     def start(self):
         self.running = True
